@@ -7,12 +7,9 @@ A billing app for a small shop. It is an offline PWA: plain HTML, CSS and JavaSc
 - Laptop: open the folder with any static server (for example `python -m http.server 8000`) and visit `http://localhost:8000`. The service worker needs `http://localhost` or `https`, so double-clicking `index.html` works for the app but not for offline install.
 - Test the maths: `node test.js`
 
-## Put it on GitHub Pages
+## Live app
 
-1. Create a new public repository on GitHub (for example `bill-book`).
-2. Upload all files from this folder to the repository root (keep `index.html` at the top level).
-3. Go to Settings, then Pages. Under "Build and deployment" choose "Deploy from a branch", branch `main`, folder `/ (root)`, and Save.
-4. After a minute your app is at `https://YOUR-NAME.github.io/bill-book/`.
+https://harshreaver.github.io/Bill-Book/ (hosted on GitHub Pages from this repo's `main` branch).
 
 ## Install on your phone
 
@@ -46,3 +43,9 @@ When you change any file, edit `CACHE = 'bill-book-v1'` in `sw.js` to `v2`, `v3`
 | It installs on a real phone | Follow "Install on your phone" above. The app opens full screen from the home screen icon. |
 
 Notes: data is kept in the browser storage of the phone, so clearing browser data for the site deletes the bills. Different phones do not share bills.
+
+## Tested
+
+- `node test.js`: all 5 hand-calculated bills and the discount cap pass.
+- In the browser: 2 tea + 1 rice 1 kg, 10% discount, 5% tax gave Rs 87.41 (my calculation: 92.50 - 9.25 = 83.25, + 4.16 tax = 87.41). A second bill gave Rs 51.44 and the daily total showed Rs 138.85.
+- On a real Android phone: installed from the live link, the QR was scanned by a UPI app with the right amount, and old bills stayed saved in flight mode.
